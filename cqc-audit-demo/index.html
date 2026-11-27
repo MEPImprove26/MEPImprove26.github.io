@@ -230,7 +230,7 @@ function onePage(i){const p=P[i];const box=$('#onepage');box.classList.remove('h
  '<div class="row" style="margin-top:12px"><button class="btn o" onclick="window.print()">Print this page</button><button class="btn" onclick="go(5)">What\u2019s outstanding</button></div></div>';
  if(window.innerWidth<700)box.scrollIntoView({behavior:'smooth'})}
 function fillOut(){const ol=$('#outlist');ol.innerHTML='';
- P.forEach(p=>Object.entries(p[3]).forEach(([k,v])=>{const c=CHECKS.find(x=>x[0]===k);ol.innerHTML+='<li><b>'+p[0]+'</b>, '+c[1].toLowerCase()+': '+v+'</li>'}));
+ P.forEach(p=>Object.entries(p[3]).forEach(([k,v])=>{const c=CHECKS.find(x=>x[0]===k);ol.innerHTML+='<li><b>'+p[0]+'</b> ('+c[1]+'): '+v+'</li>'}));
  $('#chased').classList.add('hide')}
 $('#chase').onclick=()=>$('#chased').classList.remove('hide');
 $('#play').onclick=()=>{clearT();go(1);timers.push(setTimeout(ask,600));
